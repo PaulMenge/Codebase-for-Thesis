@@ -1,0 +1,18 @@
+# Confidential and source data
+data/
+Data/
+*.dta
+*.csv
+*.xlsx
+*.xls
+
+# Stata temporary and log files
+*.log
+*.smcl
+*.tmp
+*.temp
+~$*
+
+# Operating-system files
+.DS_Store
+Thumbs.db
