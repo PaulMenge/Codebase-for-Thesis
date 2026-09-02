@@ -1,6 +1,6 @@
-# Online Appendix: Firms’ Investment and Borrowing Responses to Tax Hikes
+# Online Appendix: Take a Hike: Firms’ Investment and Borrowing Responses to Corporate Tax Changes
 
-This repository contains the empirical code and the corresponding tables and figures for the online appendix to *Firms’ Investment and Borrowing Responses to Tax Hikes*.
+This repository contains the empirical code and the corresponding tables and figures for the online appendix to *Take a Hike: Firms’ Investment and Borrowing Responses to Corporate Tax Changes*.
 
 ## Repository structure
 
