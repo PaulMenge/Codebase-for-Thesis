@@ -45,36 +45,13 @@ This repository contains the empirical code and the corresponding tables and fig
 | `05_borrowing.do` | Estimates the borrowing-response specifications. |
 | `06_Falsification&Robustness.do` | Runs falsification exercises, robustness checks, and sector-specific specifications. |
 
-### Figures
-
-| File | Content |
-| --- | --- |
-| `Plot1_revborr_lbt.png` | Borrowing-revision outcome by local-business-tax change. |
-| `Plot2_NonZero_revborr_lbt.png` | Borrowing-revision outcome for non-zero tax changes. |
-| `Plot3_NonZero_revborr_lbt_invstable.png` | Non-zero tax changes, restricted to firms with stable planned investment. |
-| `Plot4_NonZero_revborr_lbt_borrnonzero.png` | Non-zero tax changes, restricted to firms reporting non-zero borrowing. |
-| `Plot5_NonZero_revborr_lbt_both.png` | Non-zero tax changes with the combined sample restrictions. |
-| `comovement_inv_borr_revs.png` | Co-movement of investment and borrowing revisions. |
-
-### Tables
-
-| File | Content |
-| --- | --- |
-| `Table_PanelRevInvestDirectional.tex` | Panel table for directional investment revisions. |
-| `rev_invest_byyear.tex` | Investment-revision results by year. |
-| `rev_invest_directional.tex` | Directional investment-revision results. |
-
 ## Reproduction
 
-1. Install Stata and the user-written commands used by the scripts, including `reghdfe` and `distinct`.
-2. Obtain access to the confidential firm-level EBDC data and place it in the project-specific data directories expected by `main.do`.
-3. Obtain the municipal local-business-tax source files used in `01_merge.do`.
-4. Update `root_dir` in `Code/main.do` to your local project directory, then run `main.do` from Stata.
+The code has to be run on the servers of the EBDC on ifo Institute grounds. Required packages are installed. For working code execution, the lbt change file of the German Statistical Office as referenced in the thesis has to be supplied, alongside the firm type matching files of the center.
 
 The confidential microdata and externally sourced raw data are intentionally not included in this repository. The supplied code therefore documents the workflow but cannot be executed without the required data permissions and inputs.
 
 ## Notes
 
 - `main.do` is the intended entry point; run individual scripts only when reproducing a specific stage.
-- `01_merge_withcheck.do` is a diagnostic alternative to `01_merge.do`; do not run both as part of the same standard workflow.
-- Generated datasets, logs, and temporary files are excluded through `.gitignore`.
+- `01_merge_withcheck.do` is a diagnostic alternative to `01_merge.do` and not targeted in main.do per the standard workflow.
