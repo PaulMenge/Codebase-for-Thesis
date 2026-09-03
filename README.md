@@ -26,6 +26,13 @@ This repository contains the empirical code and the corresponding tables and fig
 │   ├── Table_PanelRevInvestDirectional.tex
 │   ├── rev_invest_byyear.tex
 │   └── rev_invest_directional.tex
+├── lbt_visuals/
+│   ├── combine_hebesaetze.py
+│   ├── Code.py
+│   ├── Code_Hebesatz_Aenderung.py
+│   ├── Code_visual_kreis.py
+│   ├── VG250_{GEM,KRS,LAN}_2025.{shp,shx,dbf,prj,cpg}
+│   └── Gewerbesteuer_Hebesatz_*.png
 ├── .gitignore
 └── README.md
 ```
@@ -44,6 +51,15 @@ This repository contains the empirical code and the corresponding tables and fig
 | `04_investment.do` | Estimates the investment-response specifications. |
 | `05_borrowing.do` | Estimates the borrowing-response specifications. |
 | `06_Falsification&Robustness.do` | Runs falsification exercises, robustness checks, and sector-specific specifications. |
+
+### LBT visualizations (Python)
+
+| File | Purpose |
+| --- | --- |
+| `combine_hebesaetze.py` | Combines the 2003–2023 municipal panel with the 2024 and 2025 sources and writes municipality-level rate panels. |
+| `Code.py` | Produces the municipality map of 2024 local-business-tax multiplier levels. |
+| `Code_Hebesatz_Aenderung.py` | Produces the municipality map of local-business-tax multiplier changes between selected years. |
+| `Code_visual_kreis.py` | Produces the district-level map of treatment timing and direction across 2024 and 2025. |
 
 ## Reproduction
 
