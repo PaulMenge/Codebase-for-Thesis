@@ -48,7 +48,7 @@ This repository contains the empirical code and the corresponding tables and fig
 | --- | --- |
 | `main.do` | Master script. Defines project paths, creates expected working directories, and runs the replication workflow in order. |
 | `01_merge.do` | Merges firm-level survey data with municipal local-business-tax data for 2003–2025. |
-| `01_merge_withcheck.do` | Alternative merge script with additional merge diagnostics; use for validating match quality. |
+| `01_merge_withcheck.do` | Alternative merge script with additional merge diagnostics, use for validating match quality. |
 | `02_var_prep.do` | Constructs analysis variables, including local-business-tax changes, treatment indicators, sector indicators, investment measures, and financing variables. |
 | `03_analysis.do` | Produces descriptive analyses and diagnostics for the merged data and tax changes. |
 | `04_investment.do` | Estimates the investment-response specifications. |
@@ -81,5 +81,5 @@ The confidential microdata and externally sourced raw data are intentionally not
 
 ## Notes
 
-- `main.do` is the intended entry point; run individual scripts only when reproducing a specific stage.
+- `main.do` is the intended entry point, run individual scripts only when reproducing a specific stage.
 - `01_merge_withcheck.do` is a diagnostic alternative to `01_merge.do` and not targeted in main.do per the standard workflow.
