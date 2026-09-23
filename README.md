@@ -22,6 +22,9 @@ This repository contains the empirical code and the corresponding tables and fig
 │   ├── Plot4_NonZero_revborr_lbt_borrnonzero.png
 │   ├── Plot5_NonZero_revborr_lbt_both.png
 │   └── comovement_inv_borr_revs.png
+├── Screening/
+│   ├── AGENT_INSTRUCTIONS_unified_lbt_run.md
+│   └── AGENT_INSTRUCTIONS_unified_lbt_run_2025.md
 ├── Tables/
 │   ├── Table_PanelRevInvestDirectional.tex
 │   ├── rev_invest_byyear.tex
@@ -60,6 +63,15 @@ This repository contains the empirical code and the corresponding tables and fig
 | `Code.py` | Produces the municipality map of 2024 local-business-tax multiplier levels. |
 | `Code_Hebesatz_Aenderung.py` | Produces the municipality map of local-business-tax multiplier changes between selected years. |
 | `Code_visual_kreis.py` | Produces the district-level map of treatment timing and direction across 2024 and 2025. |
+
+### Screening (Markdown)
+
+| File | Purpose |
+| --- | --- |
+| `AGENT_INSTRUCTIONS_unified_lbt_run.md` | Screens 2024 lbt changes in selected municipalities for local news or multpile years' plans to forfeit anticipation |
+| `AGENT_INSTRUCTIONS_unified_lbt_run_2025.md` | Screens 2025 lbt changes in selected municipalities for local news or multpile years' plans to forfeit anticipation |
+
+The municipality and lbt selection is taken from code run in 03_analysis.do, the input file for this llm instruction is not provided publicly as it showcases the survey firms' municipalities.
 
 ## Reproduction
 
