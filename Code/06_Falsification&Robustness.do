@@ -22,6 +22,366 @@ keep if anticipated!=1 // OMIT ANTICIPATED ONES
 
 keep if shielded != 1  // OMIT SHIELDED ONES
 
+keep if cut != 1
+
+
+
+*Nachtrag
+*Tab 5
+reghdfe revborr hike, absorb(year) vce(cluster plz_kgs)
+hc
+
+*FE Directional Table 6
+reghdfe rev_down hike, absorb(year sector_wz08_4digit) vce(cluster plz_kgs)
+hc
+reghdfe rev_up hike, absorb(year sector_wz08_4digit) vce(cluster plz_kgs)
+hc
+
+reghdfe rev_down hike, absorb(year sector_wz08_2digit) vce(cluster plz_kgs)
+hc
+reghdfe rev_up hike, absorb(year sector_wz08_2digit) vce(cluster plz_kgs)
+hc
+
+
+*Tab7,8
+preserve
+keep if manu == 1 
+reghdfe revborr hike if borrcap_ny_lagged != 0 & inv_planned_stable == 1 & !missing(borrcap_ny_lagged), absorb(year) vce(cluster plz_kgs)
+hc
+reghdfe revborr hike if borrcap_ny_lagged != 0 & inv_planned_stable == 1 & !missing(borrcap_ny_lagged), absorb(sector_wz08_2digit year) vce(cluster plz_kgs)
+hc
+reghdfe revborr hike if borrcap_ny_lagged != 0 & inv_planned_stable == 1 & !missing(borrcap_ny_lagged), absorb(sector_wz08_2digit year) vce(cluster bundesland)
+hc
+reghdfe revborr hike ln_emp if borrcap_ny_lagged != 0 & inv_planned_stable == 1 & !missing(borrcap_ny_lagged), absorb(sector_wz08_2digit year) vce(cluster plz_kgs)
+hc
+reghdfe revborr hike lbt_nov_lagged ln_emp if borrcap_ny_lagged != 0 & inv_planned_stable == 1 & !missing(borrcap_ny_lagged), absorb(sector_wz08_2digit year) vce(cluster plz_kgs)
+hc
+
+
+reghdfe revborr hike if borrcap_ny_lagged != 0 & inv_planned_stable == 1 & !missing(borrcap_ny_lagged), absorb(year) vce(cluster plz_kgs)
+hc
+reghdfe revborr hike if borrcap_ny_lagged != 0 & inv_planned_stable == 1 & !missing(borrcap_ny_lagged), absorb(sector_wz08_4digit year) vce(cluster plz_kgs)
+hc
+reghdfe revborr hike if borrcap_ny_lagged != 0 & inv_planned_stable == 1 & !missing(borrcap_ny_lagged), absorb(sector_wz08_4digit year) vce(cluster bundesland)
+hc
+reghdfe revborr hike ln_emp if borrcap_ny_lagged != 0 & inv_planned_stable == 1 & !missing(borrcap_ny_lagged), absorb(sector_wz08_4digit year) vce(cluster plz_kgs)
+hc
+reghdfe revborr hike lbt_nov_lagged ln_emp if borrcap_ny_lagged != 0 & inv_planned_stable == 1 & !missing(borrcap_ny_lagged), absorb(sector_wz08_4digit year) vce(cluster plz_kgs)
+hc
+
+
+
+
+reghdfe rev_down hike if borrcap_ny_lagged != 0 & inv_planned_stable == 1 & !missing(borrcap_ny_lagged), absorb(year) vce(cluster plz_kgs)
+hc
+reghdfe rev_up hike if borrcap_ny_lagged != 0 & inv_planned_stable == 1 & !missing(borrcap_ny_lagged), absorb(year) vce(cluster plz_kgs)
+hc
+reghdfe rev_down hike if borrcap_ny_lagged != 0 & inv_planned_stable == 1 & !missing(borrcap_ny_lagged), absorb(year sector_wz08_2digit) vce(cluster plz_kgs)
+hc
+reghdfe rev_up hike if borrcap_ny_lagged != 0 & inv_planned_stable == 1 & !missing(borrcap_ny_lagged), absorb(year sector_wz08_2digit) vce(cluster plz_kgs)
+hc
+reghdfe rev_down hike if borrcap_ny_lagged != 0 & inv_planned_stable == 1 & !missing(borrcap_ny_lagged), absorb(year sector_wz08_4digit) vce(cluster plz_kgs)
+hc
+reghdfe rev_up hike if borrcap_ny_lagged != 0 & inv_planned_stable == 1 & !missing(borrcap_ny_lagged), absorb(year sector_wz08_4digit) vce(cluster plz_kgs)
+hc
+restore
+
+
+preserve
+keep if manu != 1 
+reghdfe revborr hike if borrcap_ny_lagged != 0 & inv_planned_stable == 1 & !missing(borrcap_ny_lagged), absorb(year) vce(cluster plz_kgs)
+hc
+reghdfe revborr hike if borrcap_ny_lagged != 0 & inv_planned_stable == 1 & !missing(borrcap_ny_lagged), absorb(sector_wz08_2digit year) vce(cluster plz_kgs)
+hc
+reghdfe revborr hike if borrcap_ny_lagged != 0 & inv_planned_stable == 1 & !missing(borrcap_ny_lagged), absorb(sector_wz08_2digit year) vce(cluster bundesland)
+hc
+reghdfe revborr hike ln_emp if borrcap_ny_lagged != 0 & inv_planned_stable == 1 & !missing(borrcap_ny_lagged), absorb(sector_wz08_2digit year) vce(cluster plz_kgs)
+hc
+reghdfe revborr hike lbt_nov_lagged ln_emp if borrcap_ny_lagged != 0 & inv_planned_stable == 1 & !missing(borrcap_ny_lagged), absorb(sector_wz08_2digit year) vce(cluster plz_kgs)
+hc
+
+
+reghdfe revborr hike if borrcap_ny_lagged != 0 & inv_planned_stable == 1 & !missing(borrcap_ny_lagged), absorb(year) vce(cluster plz_kgs)
+hc
+reghdfe revborr hike if borrcap_ny_lagged != 0 & inv_planned_stable == 1 & !missing(borrcap_ny_lagged), absorb(sector_wz08_4digit year) vce(cluster plz_kgs)
+hc
+reghdfe revborr hike if borrcap_ny_lagged != 0 & inv_planned_stable == 1 & !missing(borrcap_ny_lagged), absorb(sector_wz08_4digit year) vce(cluster bundesland)
+hc
+reghdfe revborr hike ln_emp if borrcap_ny_lagged != 0 & inv_planned_stable == 1 & !missing(borrcap_ny_lagged), absorb(sector_wz08_4digit year) vce(cluster plz_kgs)
+hc
+reghdfe revborr hike lbt_nov_lagged ln_emp if borrcap_ny_lagged != 0 & inv_planned_stable == 1 & !missing(borrcap_ny_lagged), absorb(sector_wz08_4digit year) vce(cluster plz_kgs)
+hc
+
+
+
+
+reghdfe rev_down hike if borrcap_ny_lagged != 0 & inv_planned_stable == 1 & !missing(borrcap_ny_lagged), absorb(year) vce(cluster plz_kgs)
+hc
+reghdfe rev_up hike if borrcap_ny_lagged != 0 & inv_planned_stable == 1 & !missing(borrcap_ny_lagged), absorb(year) vce(cluster plz_kgs)
+hc
+reghdfe rev_down hike if borrcap_ny_lagged != 0 & inv_planned_stable == 1 & !missing(borrcap_ny_lagged), absorb(year sector_wz08_2digit) vce(cluster plz_kgs)
+hc
+reghdfe rev_up hike if borrcap_ny_lagged != 0 & inv_planned_stable == 1 & !missing(borrcap_ny_lagged), absorb(year sector_wz08_2digit) vce(cluster plz_kgs)
+hc
+reghdfe rev_down hike if borrcap_ny_lagged != 0 & inv_planned_stable == 1 & !missing(borrcap_ny_lagged), absorb(year sector_wz08_4digit) vce(cluster plz_kgs)
+hc
+reghdfe rev_up hike if borrcap_ny_lagged != 0 & inv_planned_stable == 1 & !missing(borrcap_ny_lagged), absorb(year sector_wz08_4digit) vce(cluster plz_kgs)
+hc
+
+restore
+
+
+
+*Lead für Main
+reghdfe revborr hike_lead, absorb(year) vce(cluster plz_kgs)
+hc
+reghdfe revborr hike_lead, absorb(sector_wz08_2digit year) vce(cluster plz_kgs)
+hc
+
+reghdfe revborr hike_lead, absorb(sector_wz08_2digit year) vce(cluster bundesland)
+hc
+
+reghdfe revborr hike_lead ln_emp, absorb(sector_wz08_2digit year) vce(cluster plz_kgs)
+hc
+
+reghdfe revborr hike_lead lbt_nov_lagged ln_emp, absorb(sector_wz08_2digit year) vce(cluster plz_kgs)
+hc
+
+reghdfe rev_down hike_lead, absorb(year) vce(cluster plz_kgs)
+hc
+reghdfe rev_up hike_lead, absorb(year) vce(cluster plz_kgs)
+hc
+reghdfe rev_down hike hike_lead, absorb(year) vce(cluster plz_kgs)
+hc
+reghdfe rev_up hike hike_lead, absorb(year) vce(cluster plz_kgs)
+hc
+
+
+reghdfe rev_down hike_lead, absorb(year sector_wz08_2digit) vce(cluster plz_kgs)
+hc
+reghdfe rev_up hike_lead, absorb(year sector_wz08_2digit) vce(cluster plz_kgs)
+hc
+reghdfe rev_down hike hike_lead, absorb(year sector_wz08_2digit) vce(cluster plz_kgs)
+hc
+reghdfe rev_up hike hike_lead, absorb(year sector_wz08_2digit) vce(cluster plz_kgs)
+hc
+
+
+reghdfe rev_down hike_lag, absorb(year sector_wz08_2digit) vce(cluster plz_kgs)
+hc
+reghdfe rev_up hike_lag, absorb(year sector_wz08_2digit) vce(cluster plz_kgs)
+hc
+reghdfe rev_down hike hike_lag, absorb(year sector_wz08_2digit) vce(cluster plz_kgs)
+hc
+reghdfe rev_up hike hike_lag, absorb(year sector_wz08_2digit) vce(cluster plz_kgs)
+hc
+
+
+
+
+*Lag industry
+preserve
+keep if manu != 1 
+reghdfe revborr hike_lag if borrcap_ny_lagged != 0 & inv_planned_stable == 1 & !missing(borrcap_ny_lagged), absorb(year) vce(cluster plz_kgs)
+hc
+reghdfe revborr hike_lag if borrcap_ny_lagged != 0 & inv_planned_stable == 1 & !missing(borrcap_ny_lagged), absorb(sector_wz08_2digit year) vce(cluster plz_kgs)
+hc
+reghdfe revborr hike_lag if borrcap_ny_lagged != 0 & inv_planned_stable == 1 & !missing(borrcap_ny_lagged), absorb(sector_wz08_2digit year) vce(cluster bundesland)
+hc
+reghdfe revborr hike_lag ln_emp if borrcap_ny_lagged != 0 & inv_planned_stable == 1 & !missing(borrcap_ny_lagged), absorb(sector_wz08_2digit year) vce(cluster plz_kgs)
+hc
+reghdfe revborr hike_lag lbt_nov_lagged ln_emp if borrcap_ny_lagged != 0 & inv_planned_stable == 1 & !missing(borrcap_ny_lagged), absorb(sector_wz08_2digit year) vce(cluster plz_kgs)
+hc
+restore
+
+preserve
+keep if manu != 1 
+reghdfe revborr hike hike_lag if borrcap_ny_lagged != 0 & inv_planned_stable == 1 & !missing(borrcap_ny_lagged), absorb(year) vce(cluster plz_kgs)
+hc
+reghdfe revborr hike hike_lag if borrcap_ny_lagged != 0 & inv_planned_stable == 1 & !missing(borrcap_ny_lagged), absorb(sector_wz08_2digit year) vce(cluster plz_kgs)
+hc
+reghdfe revborr hike hike_lag if borrcap_ny_lagged != 0 & inv_planned_stable == 1 & !missing(borrcap_ny_lagged), absorb(sector_wz08_2digit year) vce(cluster bundesland)
+hc
+reghdfe revborr hike hike_lag ln_emp if borrcap_ny_lagged != 0 & inv_planned_stable == 1 & !missing(borrcap_ny_lagged), absorb(sector_wz08_2digit year) vce(cluster plz_kgs)
+hc
+reghdfe revborr hike hike_lag lbt_nov_lagged ln_emp if borrcap_ny_lagged != 0 & inv_planned_stable == 1 & !missing(borrcap_ny_lagged), absorb(sector_wz08_2digit year) vce(cluster plz_kgs)
+hc
+restore
+
+preserve
+keep if manu == 1 
+reghdfe revborr hike_lag if borrcap_ny_lagged != 0 & inv_planned_stable == 1 & !missing(borrcap_ny_lagged), absorb(year) vce(cluster plz_kgs)
+hc
+reghdfe revborr hike_lag if borrcap_ny_lagged != 0 & inv_planned_stable == 1 & !missing(borrcap_ny_lagged), absorb(sector_wz08_2digit year) vce(cluster plz_kgs)
+hc
+reghdfe revborr hike_lag if borrcap_ny_lagged != 0 & inv_planned_stable == 1 & !missing(borrcap_ny_lagged), absorb(sector_wz08_2digit year) vce(cluster bundesland)
+hc
+reghdfe revborr hike_lag ln_emp if borrcap_ny_lagged != 0 & inv_planned_stable == 1 & !missing(borrcap_ny_lagged), absorb(sector_wz08_2digit year) vce(cluster plz_kgs)
+hc
+reghdfe revborr hike_lag lbt_nov_lagged ln_emp if borrcap_ny_lagged != 0 & inv_planned_stable == 1 & !missing(borrcap_ny_lagged), absorb(sector_wz08_2digit year) vce(cluster plz_kgs)
+hc
+restore
+
+preserve
+keep if manu == 1 
+reghdfe revborr hike hike_lag if borrcap_ny_lagged != 0 & inv_planned_stable == 1 & !missing(borrcap_ny_lagged), absorb(year) vce(cluster plz_kgs)
+hc
+reghdfe revborr hike hike_lag if borrcap_ny_lagged != 0 & inv_planned_stable == 1 & !missing(borrcap_ny_lagged), absorb(sector_wz08_2digit year) vce(cluster plz_kgs)
+hc
+reghdfe revborr hike hike_lag if borrcap_ny_lagged != 0 & inv_planned_stable == 1 & !missing(borrcap_ny_lagged), absorb(sector_wz08_2digit year) vce(cluster bundesland)
+hc
+reghdfe revborr hike hike_lag ln_emp if borrcap_ny_lagged != 0 & inv_planned_stable == 1 & !missing(borrcap_ny_lagged), absorb(sector_wz08_2digit year) vce(cluster plz_kgs)
+hc
+reghdfe revborr hike hike_lag lbt_nov_lagged ln_emp if borrcap_ny_lagged != 0 & inv_planned_stable == 1 & !missing(borrcap_ny_lagged), absorb(sector_wz08_2digit year) vce(cluster plz_kgs)
+hc
+restore
+
+
+
+*Lead industry (schwierig weil enorm lower count und ausschließich 2024)
+preserve
+keep if manu != 1 
+reghdfe revborr hike hike_lead if borrcap_ny_lagged != 0 & inv_planned_stable == 1 & !missing(borrcap_ny_lagged), absorb(year) vce(cluster plz_kgs)
+hc
+reghdfe revborr hike hike_lead if borrcap_ny_lagged != 0 & inv_planned_stable == 1 & !missing(borrcap_ny_lagged), absorb(sector_wz08_2digit year) vce(cluster plz_kgs)
+hc
+reghdfe revborr hike hike_lead if borrcap_ny_lagged != 0 & inv_planned_stable == 1 & !missing(borrcap_ny_lagged), absorb(sector_wz08_2digit year) vce(cluster bundesland)
+hc
+reghdfe revborr hike hike_lead ln_emp if borrcap_ny_lagged != 0 & inv_planned_stable == 1 & !missing(borrcap_ny_lagged), absorb(sector_wz08_2digit year) vce(cluster plz_kgs)
+hc
+reghdfe revborr hike hike_lead lbt_nov_lagged ln_emp if borrcap_ny_lagged != 0 & inv_planned_stable == 1 & !missing(borrcap_ny_lagged), absorb(sector_wz08_2digit year) vce(cluster plz_kgs)
+hc
+
+
+reghdfe rev_down hike_lead if borrcap_ny_lagged != 0 & inv_planned_stable == 1 & !missing(borrcap_ny_lagged), absorb(year sector_wz08_2digit) vce(cluster plz_kgs)
+hc
+reghdfe rev_up hike_lead if borrcap_ny_lagged != 0 & inv_planned_stable == 1 & !missing(borrcap_ny_lagged), absorb(year sector_wz08_2digit) vce(cluster plz_kgs)
+hc
+reghdfe rev_down hike hike_lead if borrcap_ny_lagged != 0 & inv_planned_stable == 1 & !missing(borrcap_ny_lagged), absorb(year sector_wz08_2digit) vce(cluster plz_kgs)
+hc
+reghdfe rev_up hike hike_lead if borrcap_ny_lagged != 0 & inv_planned_stable == 1 & !missing(borrcap_ny_lagged), absorb(year sector_wz08_2digit) vce(cluster plz_kgs)
+hc
+count if hike_lead == 1 & borrcap_ny_lagged != 0 & inv_planned_stable == 1 & !missing(borrcap_ny_lagged) & rev_down == 1 
+count if hike_lead == 1 & borrcap_ny_lagged != 0 & inv_planned_stable == 1 & !missing(borrcap_ny_lagged) & rev_up == 1 
+restore
+
+preserve
+keep if manu == 1 
+reghdfe revborr hike hike_lead if borrcap_ny_lagged != 0 & inv_planned_stable == 1 & !missing(borrcap_ny_lagged), absorb(year) vce(cluster plz_kgs)
+hc
+reghdfe revborr hike hike_lead if borrcap_ny_lagged != 0 & inv_planned_stable == 1 & !missing(borrcap_ny_lagged), absorb(sector_wz08_2digit year) vce(cluster plz_kgs)
+hc
+reghdfe revborr hike hike_lead if borrcap_ny_lagged != 0 & inv_planned_stable == 1 & !missing(borrcap_ny_lagged), absorb(sector_wz08_2digit year) vce(cluster bundesland)
+hc
+reghdfe revborr hike hike_lead ln_emp if borrcap_ny_lagged != 0 & inv_planned_stable == 1 & !missing(borrcap_ny_lagged), absorb(sector_wz08_2digit year) vce(cluster plz_kgs)
+hc
+reghdfe revborr hike hike_lead lbt_nov_lagged ln_emp if borrcap_ny_lagged != 0 & inv_planned_stable == 1 & !missing(borrcap_ny_lagged), absorb(sector_wz08_2digit year) vce(cluster plz_kgs)
+hc
+
+
+reghdfe rev_down hike_lead if borrcap_ny_lagged != 0 & inv_planned_stable == 1 & !missing(borrcap_ny_lagged), absorb(year sector_wz08_2digit) vce(cluster plz_kgs)
+hc
+reghdfe rev_up hike_lead if borrcap_ny_lagged != 0 & inv_planned_stable == 1 & !missing(borrcap_ny_lagged), absorb(year sector_wz08_2digit) vce(cluster plz_kgs)
+hc
+reghdfe rev_down hike hike_lead if borrcap_ny_lagged != 0 & inv_planned_stable == 1 & !missing(borrcap_ny_lagged), absorb(year sector_wz08_2digit) vce(cluster plz_kgs)
+hc
+reghdfe rev_up hike hike_lead if borrcap_ny_lagged != 0 & inv_planned_stable == 1 & !missing(borrcap_ny_lagged), absorb(year sector_wz08_2digit) vce(cluster plz_kgs)
+hc
+count if hike_lead == 1 & borrcap_ny_lagged != 0 & inv_planned_stable == 1 & !missing(borrcap_ny_lagged) & rev_down == 1 
+count if hike_lead == 1 & borrcap_ny_lagged != 0 & inv_planned_stable == 1 & !missing(borrcap_ny_lagged) & rev_up == 1 
+
+restore
+
+
+
+*Main Lag
+preserve
+keep if manu == 1 
+reghdfe revborr hike_lag if borrcap_ny_lagged != 0 & inv_planned_stable == 1 & !missing(borrcap_ny_lagged), absorb(year) vce(cluster plz_kgs)
+hc
+reghdfe revborr hike_lag if borrcap_ny_lagged != 0 & inv_planned_stable == 1 & !missing(borrcap_ny_lagged), absorb(sector_wz08_2digit year) vce(cluster plz_kgs)
+hc
+reghdfe revborr hike_lag if borrcap_ny_lagged != 0 & inv_planned_stable == 1 & !missing(borrcap_ny_lagged), absorb(sector_wz08_2digit year) vce(cluster bundesland)
+hc
+reghdfe revborr hike_lag ln_emp if borrcap_ny_lagged != 0 & inv_planned_stable == 1 & !missing(borrcap_ny_lagged), absorb(sector_wz08_2digit year) vce(cluster plz_kgs)
+hc
+reghdfe revborr hike_lag lbt_nov_lagged ln_emp if borrcap_ny_lagged != 0 & inv_planned_stable == 1 & !missing(borrcap_ny_lagged), absorb(sector_wz08_2digit year) vce(cluster plz_kgs)
+hc
+restore
+preserve
+keep if manu != 1 
+reghdfe revborr hike_lag if borrcap_ny_lagged != 0 & inv_planned_stable == 1 & !missing(borrcap_ny_lagged), absorb(year) vce(cluster plz_kgs)
+hc
+reghdfe revborr hike_lag if borrcap_ny_lagged != 0 & inv_planned_stable == 1 & !missing(borrcap_ny_lagged), absorb(sector_wz08_2digit year) vce(cluster plz_kgs)
+hc
+reghdfe revborr hike_lag if borrcap_ny_lagged != 0 & inv_planned_stable == 1 & !missing(borrcap_ny_lagged), absorb(sector_wz08_2digit year) vce(cluster bundesland)
+hc
+reghdfe revborr hike_lag ln_emp if borrcap_ny_lagged != 0 & inv_planned_stable == 1 & !missing(borrcap_ny_lagged), absorb(sector_wz08_2digit year) vce(cluster plz_kgs)
+hc
+reghdfe revborr hike_lag lbt_nov_lagged ln_emp if borrcap_ny_lagged != 0 & inv_planned_stable == 1 & !missing(borrcap_ny_lagged), absorb(sector_wz08_2digit year) vce(cluster plz_kgs)
+hc
+restore
+
+preserve
+keep if manu == 1 
+reghdfe revborr hike hike_lag if borrcap_ny_lagged != 0 & inv_planned_stable == 1 & !missing(borrcap_ny_lagged), absorb(year) vce(cluster plz_kgs)
+hc
+reghdfe revborr hike hike_lag if borrcap_ny_lagged != 0 & inv_planned_stable == 1 & !missing(borrcap_ny_lagged), absorb(sector_wz08_2digit year) vce(cluster plz_kgs)
+hc
+reghdfe revborr hike hike_lag if borrcap_ny_lagged != 0 & inv_planned_stable == 1 & !missing(borrcap_ny_lagged), absorb(sector_wz08_2digit year) vce(cluster bundesland)
+hc
+reghdfe revborr hike hike_lag ln_emp if borrcap_ny_lagged != 0 & inv_planned_stable == 1 & !missing(borrcap_ny_lagged), absorb(sector_wz08_2digit year) vce(cluster plz_kgs)
+hc
+reghdfe revborr hike hike_lag lbt_nov_lagged ln_emp if borrcap_ny_lagged != 0 & inv_planned_stable == 1 & !missing(borrcap_ny_lagged), absorb(sector_wz08_2digit year) vce(cluster plz_kgs)
+hc
+restore
+preserve
+keep if manu != 1 
+reghdfe revborr hike hike_lag if borrcap_ny_lagged != 0 & inv_planned_stable == 1 & !missing(borrcap_ny_lagged), absorb(year) vce(cluster plz_kgs)
+hc
+reghdfe revborr hike hike_lag if borrcap_ny_lagged != 0 & inv_planned_stable == 1 & !missing(borrcap_ny_lagged), absorb(sector_wz08_2digit year) vce(cluster plz_kgs)
+hc
+reghdfe revborr hike hike_lag if borrcap_ny_lagged != 0 & inv_planned_stable == 1 & !missing(borrcap_ny_lagged), absorb(sector_wz08_2digit year) vce(cluster bundesland)
+hc
+reghdfe revborr hike hike_lag ln_emp if borrcap_ny_lagged != 0 & inv_planned_stable == 1 & !missing(borrcap_ny_lagged), absorb(sector_wz08_2digit year) vce(cluster plz_kgs)
+hc
+reghdfe revborr hike hike_lag lbt_nov_lagged ln_emp if borrcap_ny_lagged != 0 & inv_planned_stable == 1 & !missing(borrcap_ny_lagged), absorb(sector_wz08_2digit year) vce(cluster plz_kgs)
+hc
+restore
+
+
+preserve
+keep if manu != 1 
+reghdfe revborr hike hike_lead if borrcap_ny_lagged != 0 & inv_planned_stable == 1 & !missing(borrcap_ny_lagged), absorb(year) vce(cluster plz_kgs)
+hc
+reghdfe revborr hike hike_lead if borrcap_ny_lagged != 0 & inv_planned_stable == 1 & !missing(borrcap_ny_lagged), absorb(sector_wz08_2digit year) vce(cluster plz_kgs)
+hc
+reghdfe revborr hike hike_lead if borrcap_ny_lagged != 0 & inv_planned_stable == 1 & !missing(borrcap_ny_lagged), absorb(sector_wz08_2digit year) vce(cluster bundesland)
+hc
+reghdfe revborr hike hike_lead ln_emp if borrcap_ny_lagged != 0 & inv_planned_stable == 1 & !missing(borrcap_ny_lagged), absorb(sector_wz08_2digit year) vce(cluster plz_kgs)
+hc
+reghdfe revborr hike hike_lead lbt_nov_lagged ln_emp if borrcap_ny_lagged != 0 & inv_planned_stable == 1 & !missing(borrcap_ny_lagged), absorb(sector_wz08_2digit year) vce(cluster plz_kgs)
+hc
+
+reghdfe rev_down hike hike_lead if borrcap_ny_lagged != 0 & inv_planned_stable == 1 & !missing(borrcap_ny_lagged), absorb(year) vce(cluster plz_kgs)
+hc
+reghdfe rev_up hike hike_lead if borrcap_ny_lagged != 0 & inv_planned_stable == 1 & !missing(borrcap_ny_lagged), absorb(year) vce(cluster plz_kgs)
+hc
+reghdfe rev_down hike hike_lead if borrcap_ny_lagged != 0 & inv_planned_stable == 1 & !missing(borrcap_ny_lagged), absorb(year sector_wz08_2digit) vce(cluster plz_kgs)
+hc
+reghdfe rev_up hike hike_lead if borrcap_ny_lagged != 0 & inv_planned_stable == 1 & !missing(borrcap_ny_lagged), absorb(year sector_wz08_2digit) vce(cluster plz_kgs)
+hc
+count if hike_lead == 1 & borrcap_ny_lagged != 0 & inv_planned_stable == 1 & !missing(borrcap_ny_lagged) & rev_down == 1 
+count if hike_lead == 1 & borrcap_ny_lagged != 0 & inv_planned_stable == 1 & !missing(borrcap_ny_lagged) & rev_up == 1 
+
+restore
+
+
+
+
+
+
+
 
 
 
@@ -442,16 +802,6 @@ restore
 
 
 
-
-
-
-
-
-
-
-
-
-
 *For Manufacturing Firms where capital investment was one of the planned goals (invgoals_nj_cap_lagged != 0)
 preserve
 keep if inlist(year, 2024, 2025)
@@ -585,9 +935,11 @@ hc
 reghdfe revborr hike_lead hike if manu!=1 & empl_size!="large" & inv_planned_stable == 1 & borrcap_ny_lagged != 0, absorb(year sector_wz08_2digit) vce(cluster plz_kgs) 
 hc
 
+count if hike_lead == 1 &  manu==1 & empl_size == "large" & inv_planned_stable == 1 & borrcap_ny_lagged != 0 & !missing(borrcap_ny_lagged)
+count if hike_lead == 1 &  manu!=1 & empl_size == "medium" & inv_planned_stable == 1 & borrcap_ny_lagged != 0 & !missing(borrcap_ny_lagged)
 
-
-
+count if hike_lag == 1 &  manu!=1 & inv_planned_stable == 1 & borrcap_ny_lagged != 0 & !missing(borrcap_ny_lagged)
+count if hike_lag == 1 &  manu==1 & inv_planned_stable == 1 & borrcap_ny_lagged != 0 & !missing(borrcap_ny_lagged)
 
 
 
@@ -602,7 +954,7 @@ distinct firm_id if ever_lead24 == 1 & ever_hit25 == 1 & hike == 1
 
 distinct firm_id if ever_lead24 == 1 & ever_hit25 == 1 & manu==1
 distinct firm_id if ever_lead24 == 1 & ever_hit25 == 1 & manu!=1
-//That makes the Placebo Test somewhat powerless as the same firms that are in the treated sample for 2024 are also in that of 2025 as many municipalitites hike two times in a row (not multi year regime though). Panel Persistenc, and the placebo would need the lead group to be cleanly treated contemporaneously. 
+//That makes the Placebo Test somewhat powerless as the same firms that are in the treated sample for 2024 are also in that of 2025 as many municipalitites hike two times in a row (not multi year regime though). Panel Persistence, and the placebo would need the lead group to be cleanly treated contemporaneously. 
 
 
 
